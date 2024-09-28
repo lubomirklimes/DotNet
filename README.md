@@ -30,7 +30,7 @@ Poznámky k pokročilejším tématům .NETu:
 -   [Správné použití `Task`, `ValueTask` a jejich dopady na výkon](Task_ValueTask.md)
 -   [Paralelní zpracování s pomocí `System.Threading.Channels`](Paralelni_zpracovani_Channels.md)
 -   [Praktické příklady s .NET Parallel Library a PLINQ](TPL_PLINQ.md)
-
+-   [Přehled paralelních kolekcí v .NET: BlockingCollection, ConcurrentQueue a další](Paralelni_kolekce.md)
 -   `IAsyncEnumerable` a asynchronní streamování dat
     -   Představuje moderní techniku pro **asynchronní iteraci**, což je užitečné při práci s datovými proudy, kde jednotlivé prvky dorazí postupně a nelze je načíst najednou.
     -   Příklady: zpracování velkých datových zdrojů (např. soubory, databázové dotazy) pomocí asynchronních iterátorů.
