@@ -4,7 +4,10 @@ Optimalizace správy paměti a Garbage Collection v .NET: Jak zlepšit výkon ap
 Efektivní správa paměti je klíčovým faktorem při vývoji rychlých a stabilních .NET aplikací. Garbage Collection (GC) je základním mechanismem, který uvolňuje paměť, jež už aplikace nepotřebuje. 
 Nicméně, nadměrné nebo špatně řízené operace GC mohou výrazně ovlivnit výkon aplikace, zejména u aplikací s vysokým zatížením. 
 
+* * * * *
+
 ### 1\. **Jak funguje Garbage Collection v .NET**
+-------------------------------------------------
 
 Garbage Collection (GC) v .NET je automatický proces správy paměti, který pravidelně uvolňuje paměť alokovanou objekty, které již nejsou používané. GC pracuje v několika fázích:
 
@@ -15,6 +18,7 @@ Garbage Collection (GC) v .NET je automatický proces správy paměti, který pr
 Garbage Collection přináší výhodu v tom, že automatizuje správu paměti, což snižuje pravděpodobnost chyb jako paměťové úniky. Na druhou stranu, nesprávně optimalizovaný GC může mít negativní vliv na výkon kvůli častým pauzám a zátěži procesoru.
 
 ### 2\. **Problémy s Garbage Collection, které ovlivňují výkon**
+----------------------------------------------------------------
 
 Hlavní problémy s GC, které mohou vést k degradaci výkonu, zahrnují:
 
@@ -24,6 +28,7 @@ Hlavní problémy s GC, které mohou vést k degradaci výkonu, zahrnují:
 -   **Generace 2:** Běh GC pro generaci 2 je výrazně nákladnější než pro generaci 0 a 1, protože zahrnuje dlouhodobé objekty, jejichž analýza a uvolňování zabere více času.
 
 ### 3\. **Techniky optimalizace správy paměti a GC**
+----------------------------------------------------
 
 #### a) **Snižování alokací krátkodobých objektů**
 
@@ -91,6 +96,7 @@ Profilování aplikace je klíčové pro porozumění tomu, jak GC ovlivňuje v�
     -   **dotMemory (JetBrains):** Pokročilý nástroj pro analýzu GC, který vám umožní sledovat běhy GC a fragmentaci LOH.
 
 ### 4\. **Pokročilé techniky správy paměti**
+--------------------------------------------
 
 #### a) **Pooling objektů**
 
@@ -113,6 +119,8 @@ Struktury `Span<T>` a `Memory<T>` umožňují efektivní práci s pamětí b
 
     `Span<int> numbers = stackalloc int[3] { 1, 2, 3 };`
 
-### 5\. **Závěr**
+* * * * *
 
+### 5\. **Závěr**
+-----------------
 Efektivní správa paměti a optimalizace garbage collectoru jsou klíčové pro zajištění vysokého výkonu .NET aplikací. Minimalizace častých alokací krátkodobých objektů, práce s velkými objekty a správné nastavení režimu GC mohou výrazně ovlivnit výkon aplikace. Použití moderních technik jako pooling, `Span<T>`, a pokročilé sledování GC umožní vývojářům vyhnout se běžným problémům s pamětí a optimalizovat výkon svých aplikací.

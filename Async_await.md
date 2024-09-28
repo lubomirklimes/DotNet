@@ -5,8 +5,10 @@ Asynchronní programování se v .NET a C# stalo nepostradatelným nástrojem pr
 která usnadňují práci s asynchronními úlohami a umožňují provádět neblokující operace. Pro zkušené vývojáře, kteří chtějí maximalizovat výkon svých aplikací a vyvarovat se běžných chyb, 
 však existuje řada pokročilých technik a konceptů, které jdou nad rámec základního použití těchto klíčových slov.
 
-### 1\. **Základy `async` a `await` - připomenutí pro pokročilé**
+* * * * *
 
+### 1\. **Základy `async` a `await` - připomenutí pro pokročilé**
+-----------------------------------------------------------------
 Asynchronní programování umožňuje provádění dlouhotrvajících operací, aniž by se blokovala hlavní vlákna. Když použijete klíčová slova `async` a `await`, operace se rozdělí na dvě fáze:
 
 -   **První část**: Úloha se spustí a okamžitě vrátí řízení volající metodě, zatímco operace probíhá asynchronně.
@@ -26,6 +28,7 @@ public async Task DownloadFileAsync(string url)
 Tato syntaxe je snadno čitelná, ale pokročilí vývojáři často potřebují řešit problémy, které základní přístup nezahrnuje, jako je optimalizace výkonu, zpracování chyb nebo paralelizace úloh.
 
 ### 2\. **Pokročilé techniky s `async` a `await`**
+--------------------------------------------------
 
 #### a) **Zamezení `async void`: Používejte `Task`**
 
@@ -206,7 +209,10 @@ public class MyAsyncClass
 }
 ```
 
+* * * * *
+
 ### 3\. **Závěr**
+-----------------
 
 Pokročilé asynchronní programování v .NET a C# vyžaduje nejen znalost základních konceptů jako `async` a `await`, ale také hlubší pochopení mechanismů jako `ConfigureAwait`, zpracování výjimek, paralelizace úloh, správné správy `CancellationToken` a vyhnutí se deadlockům. Pro seniorní vývojáře je zvládnutí těchto technik klíčové pro vytváření vysoce výkonných, škálovatelných a efektivních aplikací.
 

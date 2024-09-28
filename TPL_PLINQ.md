@@ -5,12 +5,12 @@ Asynchronní a paralelní programování se v moderním vývoji aplikací stáv�
 
 * * * * *
 
-1\. Úvod do .NET Parallel Library (TPL)
----------------------------------------
+### 1\. **Úvod do .NET Parallel Library (TPL)**
+-----------------------------------------------
 
 .NET Task Parallel Library (TPL) poskytuje API pro vytváření a řízení paralelních operací. Klíčovými třídami jsou zde `Task` a `Parallel`, které umožňují snadno rozdělit práci mezi více vlákna.
 
-### a) Task Parallelism
+#### a) **Task Parallelism**
 
 TPL umožňuje rozdělit úlohy na více nezávislých částí a spustit je současně. Klíčová třída je zde `Task`, která představuje asynchronní úlohu, která může být spuštěna paralelně.
 
@@ -35,7 +35,7 @@ Task.WaitAll(tasks.ToArray());  // Čekání na dokončení všech úloh
 
 V tomto příkladu vytváříme pět úloh, které se spustí paralelně. Každá úloha simuluje práci pomocí `Task.Delay` a vypíše informace o svém začátku a konci.
 
-### b) Parallel Programming
+#### b) **Parallel Programming**
 
 `Parallel` je dalším nástrojem TPL, který umožňuje paralelizaci běžných operací, jako jsou smyčky nebo akce na kolekcích. Metody `Parallel.For` a `Parallel.ForEach` poskytují jednoduchý způsob, jak paralelizovat iterace.
 
@@ -51,7 +51,7 @@ Parallel.For(0, 5, i =>
 
 Tento příklad ukazuje, jak lze pomocí `Parallel.For` paralelizovat jednoduchou smyčku. Každá iterace je vykonávána současně, což může výrazně urychlit zpracování v porovnání se sekvenčním provedením.
 
-### c) Parallel.Invoke
+#### c) **Parallel.Invoke**
 
 `Parallel.Invoke` umožňuje spustit více nezávislých akcí současně.
 
@@ -67,14 +67,12 @@ Parallel.Invoke(
 
 Zde se tři akce spustí paralelně, což opět šetří čas ve srovnání se sekvenčním provedením.
 
-* * * * *
-
-2\. Úvod do Parallel LINQ (PLINQ)
----------------------------------
+### 2\. **Úvod do Parallel LINQ (PLINQ)**
+-----------------------------------------
 
 PLINQ je rozšířením LINQ, které umožňuje paralelizovat zpracování dotazů. Pokud pracujete s datovými kolekcemi, můžete snadno přidat paralelizaci pomocí metody `AsParallel()`, což vede k rychlejšímu zpracování, zejména u výpočetně náročných operací.
 
-### a) Základní použití PLINQ
+#### a) **Základní použití PLINQ**
 
 PLINQ automaticky rozděluje dotazy na více vláken, čímž se dosahuje vyšší propustnosti. Například při práci s rozsáhlými datovými sadami může PLINQ zkrátit dobu zpracování.
 
@@ -96,7 +94,7 @@ foreach (var result in results)
 
 Tento příklad ukazuje, jak jednoduše lze pomocí `AsParallel()` paralelizovat LINQ dotazy. PLINQ automaticky rozdělí zpracování mezi dostupná jádra CPU.
 
-### b) Řízení paralelizace s PLINQ
+#### b) **Řízení paralelizace s PLINQ**
 
 Pomocí PLINQ lze kontrolovat, kolik vláken bude použito k paralelnímu zpracování. Metoda `WithDegreeOfParallelism` umožňuje omezit počet paralelních vláken.
 
@@ -119,18 +117,16 @@ foreach (var result in results)
 
 Tímto způsobem můžeme omezit vytížení systému a vyhnout se přetížení CPU při paralelním zpracování rozsáhlých dat.
 
-### c) Správné použití PLINQ
+#### c) **Správné použití PLINQ**
 
 PLINQ je skvělé pro datově intenzivní úlohy, ale nemusí být vhodné pro každou situaci. Paralelizace přináší režijní náklady (například na rozdělení práce a synchronizaci), což může být kontraproduktivní u menších datových sad nebo u úloh, které nelze efektivně rozdělit.
 
-* * * * *
-
-3\. Kombinace TPL a PLINQ
--------------------------
+### 3\. **Kombinace TPL a PLINQ**
+---------------------------------
 
 TPL a PLINQ lze často používat společně, přičemž TPL poskytuje nízkoúrovňové řízení paralelizace, zatímco PLINQ usnadňuje práci s kolekcemi a datovými proudy.
 
-### Příklad: Kombinace TPL a PLINQ pro paralelní zpracování
+#### Příklad: Kombinace TPL a PLINQ pro paralelní zpracování
 
 Představme si scénář, kdy potřebujeme načíst a zpracovat velkou kolekci dat, například z databáze nebo API. Můžeme kombinovat TPL pro paralelní načítání a PLINQ pro paralelní zpracování dat.
 
@@ -158,26 +154,24 @@ var processedData = data
 
 V tomto scénáři nejprve načteme data z několika zdrojů paralelně pomocí TPL a následně data zpracujeme pomocí PLINQ. Kombinace těchto dvou technik umožňuje maximalizovat výkon celého systému.
 
-* * * * *
+### 4\. **Výhody a omezení**
+----------------------------
 
-4\. Výhody a omezení
---------------------
-
-### Výhody:
+#### Výhody:
 
 -   **Jednoduchost použití:** Obě knihovny nabízejí intuitivní API, které vývojářům umožňuje snadno paralelizovat úlohy bez nutnosti nízkoúrovňové správy vláken.
 -   **Optimalizace výkonu:** Využití vícejádrových procesorů umožňuje rychlejší zpracování výpočetně náročných úloh.
 -   **Škálovatelnost:** Paralelizace umožňuje aplikacím škálovat výkon s rostoucím počtem jader procesoru.
 
-### Omezení:
+#### Omezení:
 
 -   **Režijní náklady:** Paralelizace má určité režijní náklady, jako je rozdělení práce a synchronizace mezi vlákny. U malých úloh nebo dat může být paralelizace kontraproduktivní.
 -   **Správa zdrojů:** Nesprávné používání paralelizace může vést k přetížení CPU a neefektivnímu využití systémových prostředků. Je důležité omezovat počet paralelních vláken a dbát na správnou synchronizaci sdílených zdrojů.
 
 * * * * *
 
-5\. Závěr
----------
+### 5\. **Závěr**
+-----------------
 
 .NET Task Parallel Library (TPL) a Parallel LINQ (PLINQ) jsou výkonné nástroje pro paralelizaci aplikací. TPL poskytuje nízkoúrovňové API pro řízení paralelních úloh, zatímco PLINQ zjednodušuje paralelní zpracování kolekcí dat. Obě knihovny lze snadno kombinovat a využívat k dosažení vyššího výkonu, zejména u výpočetně náročných úloh.
 

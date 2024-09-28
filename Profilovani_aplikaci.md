@@ -4,7 +4,10 @@ Profilování aplikací v .NET: Techniky a nástroje pro zvýšení výkonu
 Optimalizace výkonu aplikací je klíčovým prvkem při vývoji softwaru, zejména pokud jde o aplikace, které mají pracovat efektivně a bez zbytečné zátěže systémových zdrojů. 
 Profilování aplikací v .NET umožňuje vývojářům lépe porozumět chování aplikace, identifikovat výkonové problémy a nalézt způsoby, jak zlepšit jejich řešení. 
 
+* * * * *
+
 ### 1\. **Proč profilovat .NET aplikace?**
+------------------------------------------
 
 Profilování umožňuje vývojářům:
 
@@ -14,6 +17,7 @@ Profilování umožňuje vývojářům:
 -   **Monitorovat operace GC (Garbage Collection):** Nadměrná aktivita garbage collectoru může negativně ovlivnit výkon aplikace.
 
 ### 2\. **Techniky profilování aplikací v .NET**
+------------------------------------------------
 
 #### a) **Profilování CPU**
 
@@ -80,6 +84,7 @@ Profilování asynchronních operací je složitější než u synchronních met
     -   Sledujte nekonečné čekání (deadlocks) mezi asynchronními metodami a používejte vždy `await` správně.
 
 ### 3\. **Jak začít s profilováním aplikace**
+---------------------------------------------
 
 Aby bylo profilování efektivní, je důležité postupovat systematicky a zaměřit se na konkrétní oblasti, které vyžadují zlepšení. Zde je doporučený postup:
 
@@ -99,6 +104,8 @@ Aby bylo profilování efektivní, je důležité postupovat systematicky a zam�
 
     -   Po optimalizaci znovu proveďte profilování, abyste ověřili, že došlo ke zlepšení výkonu.
 
-### 4\. **Závěr**
+* * * * *
 
+### 4\. **Závěr**
+-----------------
 Profilování aplikací v .NET je nepostradatelnou součástí procesu optimalizace. Pomáhá vývojářům identifikovat kritické části aplikace, které snižují její výkon, a nabízí nástroje pro analýzu CPU, paměti, garbage collectoru i I/O operací. Použitím vhodných profilovacích technik a nástrojů můžete snížit zatížení systémových zdrojů, optimalizovat využití paměti a zvýšit celkovou efektivitu aplikace.

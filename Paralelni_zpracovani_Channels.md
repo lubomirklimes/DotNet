@@ -5,7 +5,8 @@ Paralelní zpracování a efektivní práce s vlákny jsou klíčové aspekty p�
 
 * * * * *
 
-### 1\. Co je `System.Threading.Channels`?
+### 1\. **Co je `System.Threading.Channels`?**
+----------------------------------------------
 
 `System.Threading.Channels` je součástí .NET Core a novějších verzí .NET. Tato knihovna poskytuje synchronní i asynchronní kanály, které umožňují bezpečnou a efektivní komunikaci mezi různými vlákny nebo úlohami (tasks). Kanály podporují model **producent-konzument**, což umožňuje snadné rozdělení zpracování dat mezi různá vlákna.
 
@@ -15,9 +16,8 @@ Hlavní výhody `System.Threading.Channels` jsou:
 -   **Bezpečnost při práci s vlákny:** Kanály jsou navrženy tak, aby automaticky zajišťovaly správnou synchronizaci mezi vlákny.
 -   **Vysoká propustnost:** Optimalizované pro rychlé zpracování velkých objemů dat.
 
-* * * * *
-
-### 2\. Hlavní koncepty kanálů
+### 2\. **Hlavní koncepty kanálů**
+----------------------------------
 
 #### a) **Channel**
 
@@ -33,9 +33,8 @@ K dispozici jsou dva základní typy kanálů:
 -   **UnboundedChannel<T>**: Kanál, který nemá žádné omezení velikosti bufferu, tj. může přijímat neomezené množství dat.
 -   **BoundedChannel<T>**: Kanál s omezenou kapacitou, který je omezen velikostí bufferu. Pokud je buffer plný, producent musí počkat, dokud konzument data neodebere.
 
-* * * * *
-
-### 3\. Vytvoření a použití kanálu
+### 3\. **Vytvoření a použití kanálu**
+--------------------------------------
 
 Nyní se podíváme, jak vytvořit jednoduchý kanál a využít ho k paralelnímu zpracování dat.
 
@@ -86,9 +85,8 @@ while (await reader.WaitToReadAsync())
 
 V tomto příkladu čteme z kanálu pomocí metody `WaitToReadAsync`, která se používá pro asynchronní čekání na data.
 
-* * * * *
-
-### 4\. Paralelní zpracování dat pomocí kanálů
+### 4\. **Paralelní zpracování dat pomocí kanálů**
+--------------------------------------------------
 
 Kanály jsou ideální pro paralelní zpracování, kde producenti mohou přidávat úlohy a konzumenti je následně zpracovávají ve více vláknech. Níže si ukážeme, jak implementovat paralelní zpracování pomocí kanálů.
 
@@ -148,9 +146,8 @@ class Program
 
 V tomto případě se producent a konzumenti chovají nezávisle a pracují paralelně. Díky tomu lze efektivně využívat dostupné systémové prostředky.
 
-* * * * *
-
-### 5\. Optimalizace paralelního zpracování
+### 5\. **Optimalizace paralelního zpracování**
+-----------------------------------------------
 
 Pro dosažení maximálního výkonu v paralelních scénářích je důležité brát v úvahu několik faktorů.
 
@@ -168,9 +165,8 @@ Zvýšení počtu konzumentů může zvýšit propustnost systému. Je však dů
 
 Použití neomezeného kanálu (`UnboundedChannel<T>`) může být nebezpečné, pokud množství dat není kontrolováno. Může dojít k nekonečnému růstu spotřeby paměti. Omezte velikost bufferu tam, kde je to možné, pomocí `BoundedChannel<T>`.
 
-* * * * *
-
-### 6\. Výhody `System.Threading.Channels` oproti jiným přístupům
+### 6\. **Výhody `System.Threading.Channels` oproti jiným přístupům**
+---------------------------------------------------------------------
 
 1.  **Vysoká propustnost:** Kanály jsou navrženy s ohledem na výkon, což z nich činí výkonnou alternativu k jiným mechanismům pro synchronizaci vláken, jako jsou `BlockingCollection` nebo `ConcurrentQueue`.
 
@@ -180,8 +176,8 @@ Použití neomezeného kanálu (`UnboundedChannel<T>`) může být nebezpečné,
 
 * * * * *
 
-### Závěr
-
+### 7\. **Závěr**
+-----------------
 `System.Threading.Channels` jsou mocným nástrojem pro paralelní zpracování v .NET. Poskytují flexibilní a efektivní model producent-konzument, který podporuje asynchronní operace a umožňuje efektivní řízení toku dat. Použití kanálů je výhodné zejména v aplikacích, které vyžadují vysokou propustnost a nízkou latenci při paralelním zpracování.
 
 Pro efektivní využití je důležité správně navrhnout velikost bufferu a optimalizovat počet konzumentů a producentů podle charakteru vaší aplikace.

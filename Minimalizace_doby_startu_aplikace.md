@@ -3,7 +3,10 @@ Minimalizace doby startu aplikací v .NET a techniky warm-upu
 
 Optimalizace doby startu aplikací je jedním z klíčových faktorů, které mohou výrazně zlepšit uživatelskou zkušenost, zejména u aplikací běžících v cloudu, na serverech nebo jako microservices. Nyní se podíváme na to, jak minimalizovat dobu startu aplikací v .NET, a prozkoumáme techniky tzv. warm-upu, které mohou dále zlepšit výkon při prvotním spuštění.
 
+* * * * *
+
 ### 1\. **Proč je důležité optimalizovat dobu startu?**
+-------------------------------------------------------
 
 Rychlost startu aplikace je zásadní, zejména v těchto scénářích:
 
@@ -12,6 +15,7 @@ Rychlost startu aplikace je zásadní, zejména v těchto scénářích:
 -   **Microservices:** Microservices architektura, kde aplikace komunikuje s dalšími službami, vyžaduje rychlé spouštění pro dosažení optimálního výkonu a škálování.
 
 ### 2\. **Co ovlivňuje dobu startu v .NET aplikacích?**
+-------------------------------------------------------
 
 Doba startu aplikace v .NET je ovlivněna několika faktory:
 
@@ -21,6 +25,7 @@ Doba startu aplikace v .NET je ovlivněna několika faktory:
 -   **Cold start vs. warm start:** „Cold start" znamená spuštění aplikace od nuly bez předchozí připravenosti, zatímco „warm start" se týká aplikace, která byla již částečně nebo plně připravena k provozu.
 
 ### 3\. **Techniky minimalizace doby startu**
+---------------------------------------------
 
 #### a) **Použití ReadyToRun (R2R)**
 
@@ -70,6 +75,7 @@ Dependency Injection (DI) kontejner může mít vliv na rychlost startu, zejmén
 Pokud aplikace závisí na externích službách nebo datech, je možné zrychlit start použitím in-memory cache pro načítání dat. To snižuje potřebu externí komunikace v prvních fázích spuštění.
 
 ### 4\. **Warm-up techniky pro rychlejší první požadavek**
+----------------------------------------------------------
 
 Pro aplikace, které mají problém s cold startem, mohou být užitečné různé techniky warm-upu. Tyto techniky zajišťují, že aplikace je částečně inicializovaná ještě před příchodem prvního uživatelského požadavku.
 
@@ -85,7 +91,10 @@ Pro aplikace hostované na vlastních serverech nebo v cloudu můžete vytvořit
 
 V některých scénářích může být užitečné pre-spawnování aplikačních instancí na úrovni serveru nebo kontejneru. Například při použití Kubernetes můžete nastavit `readinessProbe`, aby zajistila, že instance je připravena ještě před tím, než začne obsluhovat požadavky.
 
+* * * * *
+
 ### 5\. **Závěr**
+-----------------
 
 Optimalizace doby startu a použití technik warm-upu jsou klíčové kroky pro zajištění lepší odezvy a uživatelského zážitku. Použitím metod jako ReadyToRun, lazy loading, optimalizace DI a warm-up technik můžete dosáhnout výrazného zlepšení v době startu .NET aplikací. Vždy však mějte na paměti, že je třeba nalézt rovnováhu mezi výkonem a komplexitou optimalizací.
 

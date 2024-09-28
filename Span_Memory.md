@@ -4,7 +4,10 @@ Zvýšení výkonu v .NET pomocí Span<T>, Memory<T> a dalších moderních stru
 Správa paměti hraje klíčovou roli v optimalizaci výkonu aplikací. V .NET jsou k dispozici moderní struktury jako `Span<T>`, `Memory<T>`, `ReadOnlyMemory<T>` a další, 
 které umožňují efektivnější práci s pamětí bez zbytečných alokací a kopírování dat. 
 
+* * * * *
+
 ### 1\. **Problém s tradičními datovými typy a správa paměti v .NET**
+---------------------------------------------------------------------
 
 V tradičních aplikacích .NET se často používají typy jako `Array`, `List<T>`, nebo `String`, které mají několik nevýhod:
 
@@ -13,6 +16,7 @@ V tradičních aplikacích .NET se často používají typy jako `Array`, `Lis
 -   **Výkon GC:** Velké množství malých alokací vede k častějším běhům GC, což zpomaluje aplikaci.
 
 ### 2\. **Span<T> - Moderní struktura pro práci s daty v paměti**
+-----------------------------------------------------------------
 
 `Span<T>` je typ zavedený v .NET Core 2.1, který umožňuje pracovat s bloky paměti bez zbytečných kopírování a alokací. Umožňuje efektivně přistupovat k paměťovým segmentům jak v managed paměti (např. v poli), tak i v unmanaged paměti (např. při práci s nativními API).
 
@@ -43,6 +47,7 @@ Tento přístup je velmi efektivní, protože nedochází k žádnému kopírov�
 -   **Bezpečnost:** `Span<T>` kontroluje hranice při přístupu k datům, což zabraňuje přístupu mimo rozsah.
 
 ### 3\. **Memory<T> - Práce s pamětí na haldě**
+-----------------------------------------------
 
 Na rozdíl od `Span<T>` je `Memory<T>` alokován na haldě a není omezen na životnost zásobníku. Díky tomu může být předán mezi různými thready a může být uložen jako člen třídy.
 
@@ -62,6 +67,7 @@ Span<int> span = memory.Span; // Přístup ke Span<T> pro operace s daty
 -   **Možnost asynchronního použití:** `Memory<T>` může být použit v asynchronních metodách, kde životnost proměnných přesahuje rámec jedné metody.
 
 ### 4\. **ReadOnlySpan<T> a ReadOnlyMemory<T>**
+-----------------------------------------------
 
 Kromě základních struktur `Span<T>` a `Memory<T>` existují jejich varianty pro práci s **pouze pro čtení** daty, tedy `ReadOnlySpan<T>` a `ReadOnlyMemory<T>`. Tyto typy poskytují stejnou výkonnost a flexibilitu, ale zaručují, že nedojde k modifikaci dat.
 
@@ -78,6 +84,7 @@ Console.WriteLine(span.ToString()); // Vypíše "Hello"
 Tímto způsobem se můžete vyhnout nadměrným alokacím paměti při manipulaci s řetězci.
 
 ### 5\. **Stackalloc - Efektivní alokace na zásobníku**
+-------------------------------------------------------
 
 Pro ještě větší kontrolu nad pamětí můžete v .NET použít klíčové slovo `stackalloc`, které alokuje paměť přímo na zásobníku. To je užitečné pro scénáře, kde potřebujete rychlou a krátkodobou alokaci bez nutnosti správy haldy.
 
@@ -96,6 +103,7 @@ foreach (int number in numbers)
 Alokace na zásobníku je rychlá a paměť je uvolněna automaticky, jakmile metoda skončí, což je vhodné pro scénáře, kde jsou data potřebná jen krátkodobě.
 
 ### 6\. **Pokročilé případy použití**
+-------------------------------------
 
 Moderní struktury jako `Span<T>`, `Memory<T>` a `stackalloc` najdou uplatnění v různých scénářích, kde je klíčová vysoká výkonnost a kontrola nad pamětí:
 
@@ -105,6 +113,9 @@ Moderní struktury jako `Span<T>`, `Memory<T>` a `stackalloc` najdou uplatn
 
 -   **Síťová komunikace:** Při zpracování paketů nebo binárních zpráv můžete využít `Span<T>` pro přístup k různým částem dat bez nutnosti kopírování paměti.
 
+* * * * *
+
 ### 7\. **Závěr**
+-----------------
 
 `Span<T>`, `Memory<T>`, `stackalloc` a další moderní struktury přinášejí výrazné vylepšení v oblasti správy paměti v .NET. Tyto struktury umožňují efektivnější práci s daty, snižují zátěž pro garbage collector a zvyšují výkon aplikací.

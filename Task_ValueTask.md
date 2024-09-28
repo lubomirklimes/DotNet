@@ -5,7 +5,8 @@ Asynchronní programování v .NET je úzce spjato s návratovými typy `Task`�
 
 * * * * *
 
-### 1\. Základní rozdíly mezi `Task` a `ValueTask`
+### 1\. **Základní rozdíly mezi `Task` a `ValueTask`**
+------------------------------------------------------
 
 #### a) **`Task` - osvědčený návratový typ pro asynchronní operace**
 
@@ -16,7 +17,6 @@ Asynchronní programování v .NET je úzce spjato s návratovými typy `Task`�
 ```
 public async Task<int> GetDataAsync()
 {
-    await Task.Delay(1000);  // Simulace asynchronní operace
     return 42;
 }
 ```
@@ -50,7 +50,8 @@ public ValueTask<int> GetQuickResultAsync(bool fast)
 
 Tato flexibilita umožňuje ušetřit čas i paměť tam, kde operace obvykle končí velmi rychle.
 
-### 2\. Výkonnostní dopady
+### 2\. **Výkonnostní dopady**
+------------------------------
 
 Výběr mezi `Task` a `ValueTask` může mít výrazný dopad na výkon aplikací, zejména v případě, že často pracujete s asynchronními operacemi, které jsou buď rychlé, nebo se často opakují.
 
@@ -109,7 +110,8 @@ public ValueTask<int> GetCachedDataAsync(bool isCached)
 
 Tato konstrukce umožňuje vývojářům optimalizovat kód pro případy, kdy operace nemusí vždy probíhat asynchronně.
 
-### 3\. Kdy používat `Task` a kdy `ValueTask`
+### 3\. **Kdy používat `Task` a kdy `ValueTask`**
+-------------------------------------------------
 
 #### a) **Použití `Task`**
 
@@ -131,7 +133,8 @@ Ačkoli `ValueTask` nabízí výkonnostní výhody, je důležité mít na pam
 
 * * * * *
 
-### 4\. Shrnutí a doporučení
+### 4\. **Shrnutí a doporučení**
+--------------------------------
 
 `Task` a `ValueTask` jsou klíčové nástroje pro asynchronní programování v .NET, každý s odlišnými výhodami a nevýhodami. Volba mezi nimi by měla být založena na konkrétních potřebách vaší aplikace:
 
