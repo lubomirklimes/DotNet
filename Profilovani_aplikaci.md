@@ -1,9 +1,10 @@
-### Profilování aplikací v .NET: Techniky a nástroje pro zvýšení výkonu
+Profilování aplikací v .NET: Techniky a nástroje pro zvýšení výkonu
+===================================================================
 
 Optimalizace výkonu aplikací je klíčovým prvkem při vývoji softwaru, zejména pokud jde o aplikace, které mají pracovat efektivně a bez zbytečné zátěže systémových zdrojů. 
 Profilování aplikací v .NET umožňuje vývojářům lépe porozumět chování aplikace, identifikovat výkonové problémy a nalézt způsoby, jak zlepšit jejich řešení. 
 
-#### 1\. **Proč profilovat .NET aplikace?**
+### 1\. **Proč profilovat .NET aplikace?**
 
 Profilování umožňuje vývojářům:
 
@@ -12,9 +13,9 @@ Profilování umožňuje vývojářům:
 -   **Optimalizovat spotřebu CPU:** Přetížení procesoru může způsobit pomalejší zpracování operací a větší energetickou náročnost.
 -   **Monitorovat operace GC (Garbage Collection):** Nadměrná aktivita garbage collectoru může negativně ovlivnit výkon aplikace.
 
-#### 2\. **Techniky profilování aplikací v .NET**
+### 2\. **Techniky profilování aplikací v .NET**
 
-##### a) **Profilování CPU**
+#### a) **Profilování CPU**
 
 Profilování CPU je zaměřeno na analýzu využití procesoru a pomáhá vývojářům pochopit, které části aplikace využívají nejvíce času CPU. Profilování CPU umožňuje identifikovat tzv. "hotspots" - tedy části kódu, které spotřebovávají nejvíce výpočetního času.
 
@@ -25,7 +26,7 @@ Profilování CPU je zaměřeno na analýzu využití procesoru a pomáhá vývo
     -   Zaměřte se na optimalizaci „hotpaths" - metod, které jsou volány často nebo jsou kritické pro výkon aplikace.
     -   Snižte zbytečné cykly a optimalizujte výpočetně náročné operace, jako je práce s velkými datovými strukturami.
 
-##### b) **Profilování paměti**
+#### b) **Profilování paměti**
 
 Paměťové profilování se zaměřuje na sledování využití paměti aplikace. To zahrnuje sledování alokace paměti, identifikaci paměťových úniků a analýzu chování garbage collectoru (GC).
 
@@ -39,7 +40,7 @@ Paměťové profilování se zaměřuje na sledování využití paměti aplikac
     -   Optimalizujte používání cache, abyste se vyhnuli zbytečné spotřebě paměti.
     -   Vyvarujte se zbytečných referencí, které mohou zabránit garbage collectoru v uvolnění nepoužívaných objektů.
 
-##### c) **Profilování I/O operací**
+#### c) **Profilování I/O operací**
 
 Profilování vstupně-výstupních operací (I/O) je zaměřeno na sledování výkonu přístupu k souborům, síťové komunikace a práce s databázemi. Tyto operace mohou často představovat úzká hrdla v aplikaci.
 
@@ -52,7 +53,7 @@ Profilování vstupně-výstupních operací (I/O) je zaměřeno na sledování 
     -   Snižte počet síťových volání a načítání velkých souborů najednou.
     -   Používejte asynchronní I/O operace, aby nedošlo k blokování vláken.
 
-##### d) **Garbage Collection (GC) Profiling**
+#### d) **Garbage Collection (GC) Profiling**
 
 Profilování garbage collectoru je nezbytné pro pochopení toho, jak často se garbage collector spouští a jak ovlivňuje výkon aplikace. Časté spouštění GC může zpomalit aplikaci, zejména pokud se jedná o generaci 2, kde jsou uvolňovány velké objekty.
 
@@ -65,7 +66,7 @@ Profilování garbage collectoru je nezbytné pro pochopení toho, jak často se
     -   Minimalizujte počet přidělených krátkodobých objektů, aby nedocházelo k častému GC generace 0.
     -   Optimalizujte používání velkých objektů (LOH - Large Object Heap), abyste se vyhnuli fragmentaci paměti.
 
-##### e) **Profilování asynchronního kódu**
+#### e) **Profilování asynchronního kódu**
 
 Profilování asynchronních operací je složitější než u synchronních metod, protože často zahrnuje více vláken a různá časování úloh. Profilování asynchronního kódu je nezbytné zejména u moderních aplikací, které využívají `async/await`.
 
@@ -78,7 +79,7 @@ Profilování asynchronních operací je složitější než u synchronních met
     -   Optimalizujte dlouho běžící asynchronní operace, aby nedocházelo k jejich zbytečnému blokování.
     -   Sledujte nekonečné čekání (deadlocks) mezi asynchronními metodami a používejte vždy `await` správně.
 
-#### 3\. **Jak začít s profilováním aplikace**
+### 3\. **Jak začít s profilováním aplikace**
 
 Aby bylo profilování efektivní, je důležité postupovat systematicky a zaměřit se na konkrétní oblasti, které vyžadují zlepšení. Zde je doporučený postup:
 
@@ -98,6 +99,6 @@ Aby bylo profilování efektivní, je důležité postupovat systematicky a zam�
 
     -   Po optimalizaci znovu proveďte profilování, abyste ověřili, že došlo ke zlepšení výkonu.
 
-#### 4\. **Závěr**
+### 4\. **Závěr**
 
 Profilování aplikací v .NET je nepostradatelnou součástí procesu optimalizace. Pomáhá vývojářům identifikovat kritické části aplikace, které snižují její výkon, a nabízí nástroje pro analýzu CPU, paměti, garbage collectoru i I/O operací. Použitím vhodných profilovacích technik a nástrojů můžete snížit zatížení systémových zdrojů, optimalizovat využití paměti a zvýšit celkovou efektivitu aplikace.
