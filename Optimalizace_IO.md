@@ -46,7 +46,7 @@ Bufferování je technika, která zlepšuje efektivitu I/O operací tím, že do
 -   **Výhody `BufferedStream`**:
     -   **Zrychlení přístupu k disku**: Místo mnoha malých zápisů je možné provést jeden velký zápis, což zvyšuje efektivitu.
     -   **Snížení latencí**: Menší počet operací čtení/zápisu znamená méně časově náročných přístupů k disku nebo síti.
-```
+
 **Příklad použití `BufferedStream`**:
 
 ```
