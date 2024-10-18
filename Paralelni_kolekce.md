@@ -16,18 +16,18 @@ Každou z nich představíme, ukážeme praktické příklady a vysvětlíme, kd
 
 * * * * *
 
-1\. BlockingCollection - řízení toku dat mezi vlákny
-----------------------------------------------------
+### 1\. **BlockingCollection - řízení toku dat mezi vlákny**
+------------------------------------------------------------
 
 `BlockingCollection<T>` je vysoce užitečná struktura pro scénáře producent-konzument. Umožňuje bezpečně vkládat a odebírat položky mezi vlákny a navíc poskytuje možnost blokování, když je kolekce plná nebo prázdná, což umožňuje snadné řízení toku dat mezi producenty a konzumenty.
 
-### Hlavní vlastnosti:
+#### Hlavní vlastnosti:
 
 -   **Podpora omezené kapacity**: Můžete nastavit maximální počet položek, které kolekce může obsahovat. To zabraňuje přetížení paměti při vysokém počtu úloh.
 -   **Blokování při plné/prázdné kolekci**: Umožňuje blokující přístup pomocí metod `Take()` a `Add()`, což zabraňuje aktivnímu čekání.
 -   **Podpora paralelních scénářů**: Umožňuje použití v aplikacích, kde je nutné synchronizovat producenty a konzumenty bez složitého řízení vláken.
 
-### Praktický příklad:
+#### Praktický příklad:
 
 ```
 using System;
@@ -69,23 +69,23 @@ public class Example
 
 V tomto příkladu `BlockingCollection` zajišťuje, že producent nemůže vkládat více než 5 položek najednou, a konzument vždy počká, dokud není k dispozici další položka ke zpracování.
 
-### Kdy použít:
+#### Kdy použít:
 
 -   Ideální pro scénáře **producent-konzument**, kde je potřeba kontrolovat tok dat mezi různými vlákny.
 -   Když je potřeba pracovat s omezeným množstvím paměti a zabránit přetížení systému.
 
-2\. ConcurrentQueue - Nejsnadnější cesta k paralelní frontě (FIFO)
-------------------------------------------------------------------
+### 2\. **ConcurrentQueue - Nejsnadnější cesta k paralelní frontě (FIFO)**
+--------------------------------------------------------------------------
 
 `ConcurrentQueue<T>` je bezpečná fronta pro vícevláknové prostředí, která poskytuje **neblokující** přístup. Využívá vzor FIFO (First-In, First-Out), což znamená, že položky jsou zpracovávány ve stejném pořadí, v jakém byly přidány.
 
-### Hlavní vlastnosti:
+#### Hlavní vlastnosti:
 
 -   **Nejsou žádné blokace**: Ve srovnání s `BlockingCollection` nemá `ConcurrentQueue` omezenou kapacitu ani blokující metody. Operace jsou neblokující, což minimalizuje režijní náklady.
 -   **Rychlá práce s daty**: Efektivní zpracování velkého množství položek ve vícevláknovém prostředí.
 -   **FIFO pořadí**: Data jsou zpracovávána ve stejném pořadí, v jakém byla vložena.
 
-### Praktický příklad:
+#### Praktický příklad:
 
 ```
 ConcurrentQueue<int> queue = new ConcurrentQueue<int>();
@@ -117,22 +117,22 @@ Task.WaitAll(producer, consumer);
 
 V tomto příkladu vidíme jednoduché použití `ConcurrentQueue`, kde producent přidává položky do fronty a konzument je postupně odebírá.
 
-### Kdy použít:
+#### Kdy použít:
 
 -   Když je nutné zpracovávat data ve vzoru **FIFO** bez blokování vlákna.
 -   Když je potřeba rychlý přístup k datům v paralelním prostředí, například při implementaci **asynchronních front**.
 
-3\. ConcurrentStack - Paralelní zásobník (LIFO)
------------------------------------------------
+### 3\. **ConcurrentStack - Paralelní zásobník (LIFO)**
+-------------------------------------------------------
 
 `ConcurrentStack<T>` je thread-safe verze klasického zásobníku, kde jsou položky zpracovávány ve vzoru **LIFO** (Last-In, First-Out). Každé vlákno může současně přidávat a odebírat položky bez potřeby zámků.
 
-### Hlavní vlastnosti:
+#### Hlavní vlastnosti:
 
 -   **Nejspolehlivější pro LIFO zpracování**: Hodí se pro scénáře, kde poslední přidaná položka musí být zpracována jako první.
 -   **Bez blokování**: Stejně jako `ConcurrentQueue`, i `ConcurrentStack` je neblokující a efektivně využívá více vláken.
 
-### Praktický příklad:
+#### Praktický příklad:
 
 ```
 ConcurrentStack<int> stack = new ConcurrentStack<int>();
@@ -162,21 +162,21 @@ Task.WaitAll(producer, consumer);
 
 Tento příklad demonstruje použití `ConcurrentStack`, kde producent tlačí položky na vrchol zásobníku a konzument je postupně odebírá.
 
-### Kdy použít:
+#### Kdy použít:
 
 -   V situacích, kde potřebujete **LIFO** zpracování dat, například při implementaci zásobníku úloh.
 
-4\. ConcurrentDictionary - Bezpečné zpracování klíč-hodnota párů
-----------------------------------------------------------------
+### 4\. **ConcurrentDictionary - Bezpečné zpracování klíč-hodnota párů**
+------------------------------------------------------------------------
 
 `ConcurrentDictionary<TKey, TValue>` je ideální pro scénáře, kde více vláken musí současně číst a zapisovat do stejné kolekce klíč-hodnota párů. Nabízí atomické operace pro přidávání, aktualizaci a odebírání hodnot.
 
-### Hlavní vlastnosti:
+#### Hlavní vlastnosti:
 
 -   **Thread-safe operace**: Zajišťuje bezpečný přístup k datům bez nutnosti manuální synchronizace.
 -   **Atomické operace**: Operace jako `AddOrUpdate` a `GetOrAdd` jsou atomické, což znamená, že se provádějí celé bez přerušení, což zabraňuje race conditions.
 
-### Praktický příklad:
+#### Praktický příklad:
 
 ```
 ConcurrentDictionary<string, int> dictionary = new ConcurrentDictionary<string, int>();
@@ -202,22 +202,22 @@ Task.Run(() =>
 
 Zde vidíme, jak `ConcurrentDictionary` umožňuje bezpečné přidávání a aktualizaci hodnot ve vícevláknovém prostředí.
 
-### Kdy použít:
+#### Kdy použít:
 
 -   Pro správu **klíč-hodnota párů** v paralelních úlohách, kde je třeba více operací, které mohou probíhat současně.
 
-5\. ConcurrentBag - Kolekce pro volné paralelní přidávání a odebírání dat
--------------------------------------------------------------------------
+### 5\. **ConcurrentBag - Kolekce pro volné paralelní přidávání a odebírání dat**
+---------------------------------------------------------------------------------
 
 `ConcurrentBag<T>` je optimalizovaná pro scénáře, kde vlákna provádějí operace ukládání a odebírání položek bez ohledu na pořadí. Jedná se o kolekci, která umožňuje rychlý a neblokující přístup k datům. Každé vlákno si může uchovat vlastní instanci položek, což minimalizuje potřebu synchronizace mezi vlákny.
 
-### Hlavní vlastnosti:
+#### Hlavní vlastnosti:
 
 -   **Vysoká propustnost**: Optimalizovaná pro situace, kdy se k datům přistupuje bez požadavků na konkrétní pořadí.
 -   **Nízká režie synchronizace**: Vlákna si mohou uchovávat vlastní kopii kolekce, čímž se snižuje potřeba synchronizace mezi nimi.
 -   **Nezaručuje pořadí**: Na rozdíl od `ConcurrentQueue` nebo `ConcurrentStack` zde není garantováno, že položky budou zpracovány v určitém pořadí.
 
-### Praktický příklad:
+#### Praktický příklad:
 
 ```
 ConcurrentBag<int> bag = new ConcurrentBag<int>();
@@ -247,23 +247,23 @@ Task.WaitAll(producer, consumer);
 
 Tento příklad ukazuje, jak `ConcurrentBag` umožňuje producentům přidávat položky a konzumentům je zpracovávat. Nezáleží přitom na pořadí, v jakém jsou položky přidány nebo odebrány.
 
-### Kdy použít:
+#### Kdy použít:
 
 -   Když potřebujete vysokou propustnost a na pořadí přidání a odebrání položek nezáleží.
 -   Když není třeba synchronizovat pořadí zpracování a hlavním cílem je minimalizovat režii synchronizace.
 
-6\. Immutable Collections - Kolekce pro bezpečné čtení bez zámků
-----------------------------------------------------------------
+### 6\. **Immutable Collections - Kolekce pro bezpečné čtení bez zámků**
+------------------------------------------------------------------------
 
 `Immutable Collections` jsou kolekce, které **nelze měnit po jejich vytvoření**. Místo toho jakákoli změna vytváří novou verzi kolekce. To znamená, že vlákna mohou bezpečně číst z kolekce bez obav o race conditions nebo potřebu synchronizace. Immutable kolekce se často používají v prostředích, kde je více čtenářů a velmi málo zápisů, což eliminuje nutnost zámků a synchronizačních primitiv.
 
-### Hlavní vlastnosti:
+#### Hlavní vlastnosti:
 
 -   **Bezpečné čtení bez synchronizace**: Jelikož kolekce nelze měnit, vlákna mohou současně číst z jedné instance kolekce bez potřeby zámků.
 -   **Vysoká čitelnost, nízká modifikovatelnost**: Ideální pro scénáře s častým čtením a vzácnými zápisy.
 -   **Změny vytváří nové instance**: Každá změna kolekce vrací novou verzi, což může mít vyšší paměťové nároky, ale přináší bezpečí v paralelních prostředích.
 
-### Příklad použití `ImmutableList`:
+#### Příklad použití `ImmutableList`:
 
 ```
 using System.Collections.Immutable;
@@ -278,15 +278,15 @@ Console.WriteLine(string.Join(", ", newList)); // Výstup: 1, 2, 3, 4, 5
 
 V tomto příkladu vidíme, jak je možné vytvářet nové instance seznamů při každé změně, což eliminuje nutnost synchronizace mezi vlákny.
 
-### Kdy použít:
+#### Kdy použít:
 
 -   V prostředích s více čtenáři a minimálními zápisy, například v **systémech s vysokou frekvencí čtení**.
 -   Když chcete zajistit, aby změny neměly vliv na jiné vlákna, která aktuálně čtou kolekci.
 
-7\. Porovnání kolekcí a jejich použití
---------------------------------------
+### 7\. **Porovnání kolekcí a jejich použití**
+----------------------------------------------
 
-### Shrnutí jednotlivých kolekcí:
+#### Shrnutí jednotlivých kolekcí:
 
 | Kolekce | Typ | Pořadí zpracování | Blokování | Ideální pro |
 | --- | --- | --- | --- | --- |
@@ -299,10 +299,10 @@ V tomto příkladu vidíme, jak je možné vytvářet nové instance seznamů p�
 
 Každá z těchto kolekcí má své místo v paralelním programování. Výběr vhodné kolekce závisí na typu úloh, které řešíte, a na požadavcích na **zachování pořadí**, **propustnost**, a na tom, zda potřebujete **synchronizaci mezi vlákny**.
 
-8\. Kdy použít jednotlivé struktury?
-------------------------------------
+### 8\. **Kdy použít jednotlivé struktury?**
+--------------------------------------------
 
-### Základní pravidla pro výběr kolekcí:
+#### Základní pravidla pro výběr kolekcí:
 
 -   **Kdy použít `BlockingCollection`**: Pokud máte scénář **producent-konzument** a potřebujete omezit počet zpracovávaných položek nebo řídit tok dat. BlockingCollection umožňuje efektivní řízení kapacity a poskytuje blokování, což je vhodné pro vyrovnávání přenosu dat mezi vlákny.
 
@@ -316,8 +316,8 @@ Každá z těchto kolekcí má své místo v paralelním programování. Výběr
 
 * * * * *
 
-Závěr
------
+### 9\. **Závěr**
+-----------------
 
 Práce s kolekcemi v paralelním prostředí je klíčovou součástí vývoje aplikací, které musí zpracovávat data ve více vláknech nebo procesech. .NET framework poskytuje bohatou sadu **thread-safe kolekcí** navržených tak, aby minimalizovaly potřebu manuální synchronizace a zároveň poskytovaly vysoký výkon.
 
