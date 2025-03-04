@@ -17,9 +17,9 @@
 -   [Výčtové typy (enum)](A2/enum.md)
 -   [Struktury (struct) a rozdíl oproti třídám](A2/struct.md)
 -   [Záznamy (record) – Immutabilní datové typy](A2/record.md)
--   [Anonymní typy a Tuples (tuple)](A2/)
--   [Delegáty a události (delegate, event)](A2/)
--   [Výrazy LINQ a zpracování kolekcí](A2/)
+-   [Anonymní typy a Tuples (tuple)](A2/anoanym_tuple.md)
+-   [Delegáty a události (delegate, event)](A2/delegate_event.md)
+-   [Výrazy LINQ a zpracování kolekcí](A2/linq.md)
 
 ### **3\. Základní API a knihovny .NET**
 
