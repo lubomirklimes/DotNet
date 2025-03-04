@@ -1,51 +1,18 @@
 # DotNet
 
-## 1. Úvod do .NET a jazyka c#
+## A. Úvod do .NET a jazyka c#
 
 ### **1\. Úvod do programování a C#**
 
--   Co je programování a proč je důležité?
--   Krátká historie C# a .NET
--   Instalace vývojového prostředí (Visual Studio Code / Visual Studio + .NET SDK)
--   První program „Hello, World!"
+-   [Uvod](1/Intro.md)
+-   [Pojmy](1/Concepts.md)
+-   [Podmínky a rozhodování](1/Conditions.md)
+-   [Smyčky a opakování](1/Repeating.md)
+-   [Funkce a metody](1/Methods.md)
+-   [Pole a seznamy](1/Lists.md)
+-   [Objektově orientované programování (OOP)](1/OOP.md)
 
-### **2\. Základní pojmy v C#**
-
--   Proměnné a datové typy (int, string, bool)
--   Práce se vstupem a výstupem (`Console.WriteLine()`, `Console.ReadLine()`)
--   Komentáře v kódu
-
-### **3\. Podmínky a rozhodování**
-
--   `if`, `else if`, `else`
--   Logické operátory (`&&`, `||`, `!`)
--   Příklad: Jednoduchá hra „Hádej číslo"
-
-### **4\. Smyčky a opakování**
-
--   `for`, `while`, `do-while`
--   Použití cyklů pro opakované úkoly
--   Příklad: Odpočítávání nebo jednoduchá animace v konzoli
-
-### **5\. Funkce a metody**
-
--   Jak fungují metody v C#
--   Parametry a návratové hodnoty
--   Příklad: Kalkulačka s vlastními funkcemi
-
-### **6\. Pole a seznamy**
-
--   Co je pole a jak ho vytvořit?
--   Jak pracovat se seznamy (`List<T>`)
--   Příklad: Generování seznamu náhodných čísel
-
-### 7\. Objektově orientované programování (OOP)**
-
--   Co je třída a objekt?
--   Jak vytvořit vlastní třídu a instanci objektu
--   Příklad: Programování virtuálního mazlíčka
-
-## 2. Poznámky k pokročilejším tématům .NETu:
+## B. Poznámky k pokročilejším tématům .NETu:
 
 ### 1\. **Výkonové optimalizace v .NET Core**
 
