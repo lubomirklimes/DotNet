@@ -4,8 +4,8 @@
 
 ### **1\. Úvod do programování a C#**
 
--   [Uvod](1/Intro.md)
--   [Pojmy](1/Concepts.md)
+-   [Úvod do programování a C#](1/Intro.md)
+-   [Základní pojmy v C#](1/Concepts.md)
 -   [Podmínky a rozhodování](1/Conditions.md)
 -   [Smyčky a opakování](1/Repeating.md)
 -   [Funkce a metody](1/Methods.md)
