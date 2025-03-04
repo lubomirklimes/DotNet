@@ -1,4 +1,4 @@
-2. Základní pojmy v C#
+2\. Základní pojmy v C#
 ======================
 
 Abychom mohli psát programy v C#, musíme pochopit základní stavební prvky jazyka.

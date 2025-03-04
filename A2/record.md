@@ -1,4 +1,4 @@
-3. Záznamy (`record`) -- Immutabilní datové typy
+3\. Záznamy (`record`) -- Immutabilní datové typy
 ================================================
 
 `record` je speciální typ v C#, který umožňuje snadno vytvářet **neměnné** (`immutable`) objekty. Používá se hlavně pro **datové struktury**, kde chceme zachovat hodnoty beze změny.

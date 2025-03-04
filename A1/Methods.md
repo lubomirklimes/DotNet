@@ -1,4 +1,4 @@
-5. Funkce a metody
+5\. Funkce a metody
 ==================
 
 Funkce (v C# nazývané **metody**) pomáhají rozdělit program na menší části, které provádějí konkrétní úkoly. Díky nim je kód přehlednější a snadněji se upravuje.
