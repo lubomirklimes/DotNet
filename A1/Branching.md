@@ -1,4 +1,5 @@
-### **3. Podmínky a rozhodování**  
+3. Podmínky a rozhodování
+=========================
 
 Programy často potřebují **rozhodovat**, co mají udělat. V C# k tomu slouží **podmínky**.  
 

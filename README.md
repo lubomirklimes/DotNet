@@ -12,17 +12,26 @@
 -   [Pole a seznamy](A1/Lists.md)
 -   [Objektově orientované programování (OOP)](A1/OOP.md)
 
-### **2. Základní API a knihovny .NET**
+### **2\. Další klíčové koncepty jazyka C#**
 
--   [Práce se soubory a adresáři](A2/File_IO.md)  
--   [Práce s datem a časem](A2/DateTime.md)  
--   [Základní kolekce a jejich použití](A2/Collections.md)  
--   [Řetězce a jejich zpracování](A2/Strings.md)  
--   [Výjimky a jejich ošetření](A2/Exceptions.md)  
--   [Logování a diagnostika](A2/Logging.md)  
--   [Základy práce se sítí](A2/Networking.md)  
--   [Serializace a deserializace](A2/Serialization.md)  
--   [Dependency Injection a práce se službami](A2/DependencyInjection.md)  
+-   [Výčtové typy (enum)](A2/enum.md)
+-   [Struktury (struct) a rozdíl oproti třídám](A2/struct.md)
+-   [Záznamy (record) – Immutabilní datové typy](A2/record.md)
+-   [Anonymní typy a Tuples (tuple)](A2/)
+-   [Delegáty a události (delegate, event)](A2/)
+-   [Výrazy LINQ a zpracování kolekcí](A2/)
+
+### **3\. Základní API a knihovny .NET**
+
+-   [Práce se soubory a adresáři](A3/File_IO.md)  
+-   [Práce s datem a časem](A3/DateTime.md)  
+-   [Základní kolekce a jejich použití](A3/Collections.md)  
+-   [Řetězce a jejich zpracování](A3/Strings.md)  
+-   [Výjimky a jejich ošetření](A3/Exceptions.md)  
+-   [Logování a diagnostika](A3/Logging.md)  
+-   [Základy práce se sítí](A3/Networking.md)  
+-   [Serializace a deserializace](A3/Serialization.md)  
+-   [Dependency Injection a práce se službami](A3/DependencyInjection.md)  
 
 ## B. Vývoj specifických typů aplikací
 

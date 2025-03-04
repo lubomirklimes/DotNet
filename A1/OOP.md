@@ -1,4 +1,5 @@
-### **7. Objektově orientované programování (OOP)**
+7. Objektově orientované programování (OOP)
+===========================================
 
 OOP je způsob programování, kde si program rozdělujeme na **objekty**, které mají **vlastnosti** a **chování**.
 

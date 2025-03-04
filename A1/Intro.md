@@ -1,4 +1,5 @@
-### **1. Úvod do programování a C#**
+Úvod do programování a C#
+=========================
 
 #### **Co je programování?**  
 

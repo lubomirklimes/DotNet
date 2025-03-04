@@ -1,4 +1,5 @@
-### **6. Pole a seznamy**  
+6. Pole a seznamy
+=================
 
 Pole a seznamy umožňují ukládat **více hodnot** pod jedním názvem. Používají se pro práci s velkým množstvím dat.  
 

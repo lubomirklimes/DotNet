@@ -1,4 +1,5 @@
-### **4. Smyčky a opakování**
+4. Smyčky a opakování
+=====================
 
 Smyčky umožňují opakovat stejný kód vícekrát, což šetří čas a zjednodušuje programy.
 
