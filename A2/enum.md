@@ -1,4 +1,4 @@
-1. Výčtové typy (`enum`)
+1\. Výčtové typy (`enum`)
 ========================
 
 `enum` (výčtový typ) umožňuje pojmenovat **konstantní sadu hodnot**. Používá se, když máme **pevně daný seznam možností** (např. dny v týdnu, stavy objednávky, barvy apod.).
