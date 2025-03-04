@@ -6,8 +6,8 @@
 
 -   [Úvod do programování a C#](1/Intro.md)
 -   [Základní pojmy v C#](1/Concepts.md)
--   [Podmínky a rozhodování](1/Conditions.md)
--   [Smyčky a opakování](1/Repeating.md)
+-   [Podmínky a rozhodování](1/Branching.md)
+-   [Smyčky a opakování](1/Loops.md)
 -   [Funkce a metody](1/Methods.md)
 -   [Pole a seznamy](1/Lists.md)
 -   [Objektově orientované programování (OOP)](1/OOP.md)
