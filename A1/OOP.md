@@ -431,4 +431,4 @@ class Program
 
 - **Rozhraní (`interface`)** určuje, jaké metody musí třída obsahovat.
 
-🔹 **Další krok:** Naučíme se pracovat se soubory! 🚀
+🔹 **Další krok:** **Výčtové typy (`enum`) -- Jak pracovat s konstantními hodnotami! 🚀**

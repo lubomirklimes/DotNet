@@ -297,4 +297,6 @@ class Program
 
 ---
 
-🔹 **Další krok:** **Výčtové typy (`enum`) -- Jak pracovat s konstantními hodnotami! 🚀**
+🔹 **Další krok:** **Anonymní typy a `Tuple` -- Jak vracet více hodnot z metody! 🚀**
+
+🔹 **Další krok:** Naučíme se pracovat se soubory! 🚀

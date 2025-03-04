@@ -347,4 +347,4 @@ class Program
 
 ---
 
-🔹 **Další krok:** **Anonymní typy a `Tuple` -- Jak vracet více hodnot z metody! 🚀**
+🔹 **Další krok:** **Struktury (struct) a rozdíl oproti třídám**! 🚀
