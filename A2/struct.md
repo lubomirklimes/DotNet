@@ -1,4 +1,4 @@
-2.\ Struktury (`struct`) a rozdíl oproti třídám
+2\. Struktury (`struct`) a rozdíl oproti třídám
 ==============================================
 
 Struktury (`struct`) v C# jsou podobné třídám (`class`), ale mají několik důležitých rozdílů. Používají se hlavně pro **malá, neměnná data**, která nepotřebují složité chování.
