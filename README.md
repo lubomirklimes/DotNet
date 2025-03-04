@@ -12,6 +12,8 @@
 -   [Pole a seznamy](1/Lists.md)
 -   [Objektově orientované programování (OOP)](1/OOP.md)
 
+### **2\. **
+
 ## B. Poznámky k pokročilejším tématům .NETu:
 
 ### 1\. **Výkonové optimalizace v .NET Core**
